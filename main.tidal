@@ -1,1 +1,47 @@
 d1 $ s "bd"
+d1 $ jux rev $ n (off 0.125 (|+ 7) "<c*2 a(3,8) f(3,8,2) e*2>") # sound "supermandolin" # legato 2
+d1 $ arp "<pinkyup down thumbup up>" $ n "e'maj c'sus4 e'min c'maj'4" # sound "supermandolin" # sustain 0.5 # # room 0.3 # sz 0.9
+
+d1 (sz 0.9 (room 0.3 (sound "supermandolin" (arp "<pinkyup down up thumbup up>" $ n "e'maj c'sus4 e'min c'maj'4"))))
+
+d1 $ 
+  chunk 4 (|- note 5) $
+    jux rev $ 
+    arp "<pinkyup down thumbup up>" $ n "<c'maj'4 f4'min'8 f4'maj'4>" # sound "supermandolin" # sustain 2 # room 0.3 # sz 0.9
+
+d1 $ (n (run 11) |< s "industrial") 
+
+d1 $ qtrigger 1 $ seqP [(0, 1, s "bd bd")]
+
+d1 $ n "cf'maj c'maj cs'maj" # s "supermandolin"
+
+d2 $ 
+  ( fast "0.2" $ arp "down up" $
+     (n $ "0 9 9 4 -3 2 5 9 9 2 -5" |+ "<'maj 'min9 'dim 'maj13 'min11>")
+   )
+  |> s "superpiano"
+
+d1 $ ur 1
+  "[beat, n4 m4, beat6]"
+  -- "mel"
+  [
+  ("m4", n (run 4) |> s "superpiano"),
+  ("n4", n (run 4) |> s "supermandolin"),
+  ("beat", (n (run 7) |> s "industrial")),
+  ("beat6", (n "t t f t t f t t" |> s "ht bd")),
+  ("mel", (n "0 9 9 4 -3 2 5 9 9 2 -5") |> s "superpiano")
+  ]
+  []
+
+d1 $ s "ht ht ht ht ht bd [~ sn]"
+
+d1 $ s "{bd cl!3, bd sn bd sn sn}"
+
+d1 $ s (slow "2" $ "[bd [~ sn] bd [sn sn]] ht ht ht")
+
+d1 $ (ur 3 "[sn, ht, bt] [bt, ht] [ht, bt]" [
+  ("bt", n "2 1 0 2 1 0 4 4" |> s "industrial"),
+  ("sn", s "<bd ht cl>!5 bd [~ sn]"),
+  ("ht", n "1 0 0" |> s "hardcore" )
+  ]
+  [])
