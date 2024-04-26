@@ -84,15 +84,16 @@
         "vowel-src": "vowel-src"
       },
       "locked": {
-        "lastModified": 1694087816,
-        "narHash": "sha256-GMV5ONQhLwa6xRYhZkmwc2W2jbjAfHfB/OR9vR0+PFA=",
-        "owner": "mitchmindtree",
+        "lastModified": 1714155335,
+        "narHash": "sha256-mtf0DCqxpG20XipdZsULvU+02oAwF9JwvlYA119phFo=",
+        "owner": "zmrocze",
         "repo": "tidalcycles.nix",
-        "rev": "1b1c4df5303e07930d23e8361ab8253ebec0c7bb",
+        "rev": "63b7d9bdf4f1c0593467d9dd2e462cda06753c09",
         "type": "github"
       },
       "original": {
-        "owner": "mitchmindtree",
+        "owner": "zmrocze",
+        "ref": "superdirt-install",
         "repo": "tidalcycles.nix",
         "type": "github"
       }

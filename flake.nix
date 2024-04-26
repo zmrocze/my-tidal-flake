@@ -4,8 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     tidal = {
-      url = "github:mitchmindtree/tidalcycles.nix";
-      # url = "github:zmrocze/tidalcycles.nix/superdirt-install";
+      # url = "github:mitchmindtree/tidalcycles.nix";
+      url = "github:zmrocze/tidalcycles.nix/superdirt-install";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
