@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     tidal = {
       # url = "github:mitchmindtree/tidalcycles.nix";
-      url = "github:zmrocze/tidalcycles.nix/superdirt-install";
+      url = "github:zmrocze/tidalcycles.nix?ref=karol/superdirt-install";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -18,11 +18,7 @@
     in 
     tidal.utils.eachSupportedSystem (system: {
       devShells = {
-        tidal = tidal.devShells.${system}.tidal.overrideAttrs (oldAttrs: {
-          buildInputs = oldAttrs.buildInputs ++ [
-            ((pkgsFor system).superdirt-install)
-          ];
-        });
+        tidal = tidal.devShells.${system}.tidal;
         default = self.devShells.${system}.tidal;
       };
       formatter = inputs.tidal.formatter.${system};

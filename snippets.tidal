@@ -1,0 +1,21 @@
+
+-- not to forget
+
+-- standard lib:
+
+-- plays one after another
+-- Type: cat :: [Pattern a] -> Pattern a
+
+-- cat but in one cycle
+-- Type: fastcat :: [Pattern a] -> Pattern a
+
+-- see append and 
+
+-- also: randcat, wrandcat, timecat
+
+
+-- Type: flatpat :: Pattern [a] -> Pattern a
+d1 $ n (flatpat $ listToPat [[0,4,7],[(-12),(-8),(-5)]]) # s "superpiano" # sustain 2
+
+-- Type: run :: (Num a, Enum a) => Pattern a -> Pattern a
+d1 $ n (run 8) # sound "amencutup"

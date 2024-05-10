@@ -19,11 +19,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1709309926,
-        "narHash": "sha256-VZFBtXGVD9LWTecGi6eXrE0hJ/mVB3zGUlHImUs2Qak=",
+        "lastModified": 1713995372,
+        "narHash": "sha256-fFE3M0vCoiSwCX02z8VF58jXFRj9enYUSTqjyHAjrds=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "79baff8812a0d68e24a836df0a364c678089e2c7",
+        "rev": "dd37924974b9202f8226ed5d74a252a9785aedf8",
         "type": "github"
       },
       "original": {
@@ -84,16 +84,16 @@
         "vowel-src": "vowel-src"
       },
       "locked": {
-        "lastModified": 1714155335,
-        "narHash": "sha256-mtf0DCqxpG20XipdZsULvU+02oAwF9JwvlYA119phFo=",
+        "lastModified": 1715374290,
+        "narHash": "sha256-2E0Lpenf7Y8sjVSYf7rBJqD5N5G6ecNlrWjR75SZhIU=",
         "owner": "zmrocze",
         "repo": "tidalcycles.nix",
-        "rev": "63b7d9bdf4f1c0593467d9dd2e462cda06753c09",
+        "rev": "6de93596fff8126689d9246084ff77d540db1cc9",
         "type": "github"
       },
       "original": {
         "owner": "zmrocze",
-        "ref": "superdirt-install",
+        "ref": "karol/superdirt-install",
         "repo": "tidalcycles.nix",
         "type": "github"
       }

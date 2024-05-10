@@ -45,3 +45,142 @@ d1 $ (ur 3 "[sn, ht, bt] [bt, ht] [ht, bt]" [
   ("ht", n "1 0 0" |> s "hardcore" )
   ]
   [])
+
+d1 $ ((every 3 (0.25 <~)) $ (n "<'min 'min'i 'maj7'ii> 'dim 'min11 'min9")) # s "superpiano"
+
+d2 $ s "bd ht ht"
+
+d1 $
+  (
+    slow 4 $
+    arp "pinkyup down thumbup <up up down>" $
+    (every 3 (0.25 <~) $ (n "<'maj7 'min'ii 'maj7'ii> 'dim 'min11 'min9"))
+    |+| (n "5 _ 4 3 9 _ 4 0 0 _ 4 3 2 _ 7 3")
+  ) #
+  s "superpiano"
+  -- s "mydevice"
+
+d1 $ n "0 2 4 7" # midichan 0
+
+d3 $
+  (
+    slow 4 $
+    arp "up down down <up up down>" $
+    (n "<'maj7 'min'ii 'maj7'ii> 'min11")
+    |+| (n "c e g h")
+  ) #
+  s "superpiano"
+  # room (slow 4 $ range 0 0.2 saw)
+
+
+
+d3 $ jux' [id,rev,(# speed 2)] $ every 2 ("<0.25 0.125 0.5>" <~) $ sound "bd*2 [[~ lt] sn:3] lt:1 [ht mt*2]"
+  # squiz "<1 2.5 2>"
+  # room (slow 4 $ range 0 0.2 saw)
+  # sz 0.5
+  # orbit 3
+
+-- d3 $ ur  
+
+
+d3 $
+  jux' [id,rev,(# speed 2)] $
+  -- jux rev $
+  every 2 ("<0.25 0.125 0.5 0.125>" <~) $
+  sound "bd*2 [[~ lt] sn] lt*2 [ht*2 mt]"
+  # squiz "2.5 1 <1.5 2.5 1>? 1"
+  -- # 
+  # room (slow 4 $ range 0 0.2 saw)
+  # sz 0.5
+  # orbit 3
+
+d1 $ 
+  stack [
+    s "bd sn sn",
+    n "0 1 0 2" 
+    |> s "bottle"
+  ]
+
+d1 $ fast 3 $ s "{bd sn sn sn, cp cp hh}"
+
+d1 $ s "[{bd sn sn sn}%12, {cp cp hh}%12]"
+
+d1 $ ur 1 "{cl4, bd3}" 
+  [
+    ("bd3", s "bd sn sn"),
+    ("cl4", n "0 1 0 2" |> s "ab")
+  ]
+  []
+
+d1 $ s "{bd sd stab, cp arpy cr bd}"
+
+d1 $ s "{bd!2, hh, 808:4 808:4 808:4}"
+-- , bd hh 808:4}"
+
+-- d1 $ s "[bd*3,hh*4,[~ cp]*2, bass*4]"
+
+-- below two are the same
+d1 $ s "[bd hh ho hh, {bd cp cp}%4]"
+
+-- same as above ^
+d1 $ s "{bd hh ho hh, bd cp cp}"
+
+-- different than above
+d1 $ ur 1 "[in3*4, in4*3]" [
+  ("in3", s "bd cp cp"),
+  ("in4", s "bd hh ho hh")
+]
+[]
+
+d1 $
+  jux' [id, rev, (# speed 2 )] $ 
+  octer "1 0 0" >|
+  stack [
+    n "2 3 3 2 3 3 2 3 2 2 3 2 3"
+    |> s "ab",
+    n "0 0 0 4 4 0 ~ 0 0 4 0 4 4"
+    |> s "ab"
+  ]
+
+-- brak makes a pattern sound a bit like a breakbeat. It does this by every other cycle, squashing the pattern to fit half a cycle, and offsetting it by a quarter of a cycle.
+-- d1 $ brak $ sound "[feel feel:3, hc:3 hc:2 hc:4 ho]"
+
+let 
+  f x = stack  [ x ]
+  in 
+    d1 $ f $ s "bd cp cp"
+
+d1 $ ur 1 "{in3!4}" [
+  ("in3", s "bd cp cp"),
+  ("in4", s "bd hh ho hh")
+]
+[]
+
+d1 $
+  -- jux' [id, rev, (# speed 2 )] $ 
+  octer "1 0 <0 0 0 2>" >|
+  stack [
+    n "2 3 3 2 3 3 2 3 2 2 3 2 3"
+    |> s "ab",
+    n "0 0 0 4 4 0 ~ 0 0 4 0 4 4"
+    |> s "ab"
+  ]
+
+
+-- midi out
+
+-- uses 
+d1 $ sound "bd" # speed (cF 1 "12")
+
+
+d1 $ sound "amencutup" + n (run (segment 1 $ range 1 16 $ cN 0 "32" ))
+
+d1 $ sound "amencutup" + n (cN 0 "48")
+
+d1 $ jux' [id,rev,(# speed 2)] $ every 2 ("<0.25 0.125 0.5>" <~) $ sound "bd*2 [[~ lt] sn:3] lt:1 [ht mt*2]"
+  # squiz "<1 2.5 2>"
+  # room (cF 0 "80")
+  # distort (cF 0 "80")
+  # squiz (cF 0 "80")
+  # shape (cF 0 "80")
+  # sz 0.5
