@@ -1,10 +1,9 @@
+
 SuperDirt.start;
 
-// Evaluate the block below to start the mapping MIDI -> OSC.
-// (
+(
 var on, off, cc;
 var osc;
-
 osc = NetAddr.new("127.0.0.1", 6010);
 
 MIDIClient.init;
@@ -36,11 +35,9 @@ if (~stopMidiToOsc != nil, {
     cc.free;
 };
 
-~midiOut = MIDIOut.newByName("MiniFreak", "MiniFreak MiniFreak MIDI"); // substitute your own device here
-~dirt.soundLibrary.addMIDI(\minifreak, ~midiOut);
+// send midi out via supercollider's out0
+~midiOut = MIDIOut(0);
+~dirt.soundLibrary.addMIDI(\out0, ~midiOut);
+    
+)
 
-
-// );
-
-// Evaluate the line below to stop it.
-// ~stopMidiToOsc.value;

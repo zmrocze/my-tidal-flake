@@ -16,11 +16,24 @@
         overlays = [ tidal.overlays.tidal ];
       };
     in 
-    tidal.utils.eachSupportedSystem (system: {
-      devShells = {
-        tidal = tidal.devShells.${system}.tidal;
-        default = self.devShells.${system}.tidal;
+    tidal.utils.eachSupportedSystem (system: let
+      pkgs = pkgsFor system;
+      my-superdirt-start = pkgs.writeShellApplication {
+        name = "my-superdirt-start";
+        runtimeInputs = [
+          tidal.packages.${system}.sclang-with-superdirt
+        ];
+        text = ''
+          sclang-with-superdirt ${./startup.scd}
+        '';
       };
-      formatter = inputs.tidal.formatter.${system};
-    });
+      in {
+        devShells = {
+          tidal = tidal.devShells.${system}.tidal.overrideAttrs (_: attrs: {
+            buildInputs = attrs.buildInputs ++ [ my-superdirt-start ];
+          });
+          default = self.devShells.${system}.tidal;
+        };
+        formatter = tidal.formatter.${system};
+      });
 }

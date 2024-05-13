@@ -56,9 +56,11 @@ d1 $
     arp "pinkyup down thumbup <up up down>" $
     (every 3 (0.25 <~) $ (n "<'maj7 'min'ii 'maj7'ii> 'dim 'min11 'min9"))
     |+| (n "5 _ 4 3 9 _ 4 0 0 _ 4 3 2 _ 7 3")
-  ) #
-  s "superpiano"
-  -- s "mydevice"
+  )
+  # midichan 0
+  -- #
+  -- s "superpiano"
+  -- s "minifreak"
 
 d1 $ n "0 2 4 7" # midichan 0
 
@@ -141,6 +143,7 @@ d1 $
     n "0 0 0 4 4 0 ~ 0 0 4 0 4 4"
     |> s "ab"
   ]
+  # s "out0"
 
 -- brak makes a pattern sound a bit like a breakbeat. It does this by every other cycle, squashing the pattern to fit half a cycle, and offsetting it by a quarter of a cycle.
 -- d1 $ brak $ sound "[feel feel:3, hc:3 hc:2 hc:4 ho]"
@@ -170,7 +173,7 @@ d1 $
 -- midi out
 
 -- uses 
-d1 $ sound "bd" # speed (cF 1 "12")
+d1 $ sound "bd" # distort (cF 0 "14")
 
 
 d1 $ sound "amencutup" + n (run (segment 1 $ range 1 16 $ cN 0 "32" ))
@@ -179,8 +182,8 @@ d1 $ sound "amencutup" + n (cN 0 "48")
 
 d1 $ jux' [id,rev,(# speed 2)] $ every 2 ("<0.25 0.125 0.5>" <~) $ sound "bd*2 [[~ lt] sn:3] lt:1 [ht mt*2]"
   # squiz "<1 2.5 2>"
-  # room (cF 0 "80")
-  # distort (cF 0 "80")
-  # squiz (cF 0 "80")
-  # shape (cF 0 "80")
+  # room (cF 0 "14")
+  # distort (cF 0 "14")
+  # squiz (cF 0 "14")
+  # shape (cF 0 "14")
   # sz 0.5
