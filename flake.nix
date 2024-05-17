@@ -15,7 +15,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/23.11";
     tidal = {
       # url = "github:mitchmindtree/tidalcycles.nix";
-      url = "github:zmrocze/tidalcycles.nix?ref=karol/superdirt-install";
+      url = "github:zmrocze/tidalcycles.nix/develop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     haskellNix = {
@@ -37,9 +37,5 @@
           ./nix/haskell.nix
         ];
         systems = [ "x86_64-linux" ];
-        perSystem = { inputs', ... }:
-          {
-            devShells.tidal = inputs'.tidal.devShells.tidal;
-          };
       };
 }

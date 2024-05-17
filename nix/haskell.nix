@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ inputs, config, ... }: {
   pkgsConfig.overlays = [
     inputs.haskellNix.overlay
     (final: _: {
@@ -9,7 +9,7 @@
           compiler-nix-name = "ghc928";
           shell = {
             exactDeps = true;
-            # withHoogle = true;
+            withHoogle = true;
             # packages = ps: with ps; [];
             tools = {
               # cabal = "3.6.2.0";
@@ -20,23 +20,13 @@
         };
     })
   ];
-
   perSystem = { pkgs, ... }:
     let
       project = pkgs.haskellProject.flake { };
     in
     {
-      # https://numtide.github.io/devshell/modules_schema.html
-      devshells.haskell = {
-        devshell = {
-          name = "Haskell shell";
-          motd = ''
-            ❄️ Haskell ❄️
-          '';
-          packagesFrom = [ project.devShell ];
-        };
-      };
-      inherit (project) apps checks packages;
+      inherit (project) checks apps packages;
+      devShells.haskell = project.devShell;
     };
 
 }

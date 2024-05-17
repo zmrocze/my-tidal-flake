@@ -379,11 +379,11 @@
     "hackage": {
       "flake": false,
       "locked": {
-        "lastModified": 1715819650,
-        "narHash": "sha256-TbeZoW1S2HL83NhBbhsY+4xwyFT6QrdsW1Ftu7ga+d8=",
+        "lastModified": 1715905998,
+        "narHash": "sha256-OWXpdX6PSpl4v3SycrkhZkepK1zRwpFtSTH1MnggT5k=",
         "owner": "input-output-hk",
         "repo": "hackage.nix",
-        "rev": "cee1570cc026dddeb3fd2ca0d6ec763d06952f04",
+        "rev": "958f69d793847b532874a66201a491423f2ec551",
         "type": "github"
       },
       "original": {
@@ -431,11 +431,11 @@
         "stackage": "stackage"
       },
       "locked": {
-        "lastModified": 1715820615,
-        "narHash": "sha256-cULpbivL14Qm6odGGL/7fE/SarflfS78I+6l2+2w40c=",
+        "lastModified": 1715919121,
+        "narHash": "sha256-O5rA0D+5q3Qx9FpleiJAkt9g5ndT75ljwhF5i4BiZ48=",
         "owner": "input-output-hk",
         "repo": "haskell.nix",
-        "rev": "350c2ad17fe289c708bd685cb2730e72f17a0053",
+        "rev": "093ab6c7d5ec0582b55c87ee1bd11a577565d78c",
         "type": "github"
       },
       "original": {
@@ -1072,11 +1072,11 @@
     "stackage": {
       "flake": false,
       "locked": {
-        "lastModified": 1715818858,
-        "narHash": "sha256-P+5O9jClktKdtQoXRSDX4ZgBd5skEIAVegmHryYy84s=",
+        "lastModified": 1715905158,
+        "narHash": "sha256-yChSaFeKLDXTKunRPIF/W4VmxczctzVq3oP7KUn/9X4=",
         "owner": "input-output-hk",
         "repo": "stackage.nix",
-        "rev": "e49d983f1412f72f97a4e5eec9521deb97f10d3e",
+        "rev": "c0411248c0bd61c1a8d27491f0eb9a76770fd65a",
         "type": "github"
       },
       "original": {
@@ -1175,16 +1175,16 @@
         "vowel-src": "vowel-src"
       },
       "locked": {
-        "lastModified": 1715374290,
-        "narHash": "sha256-2E0Lpenf7Y8sjVSYf7rBJqD5N5G6ecNlrWjR75SZhIU=",
+        "lastModified": 1715951490,
+        "narHash": "sha256-JOXj1b1c+VMV05RDkio7D2j7wW7Escjd+n6rHj+77cY=",
         "owner": "zmrocze",
         "repo": "tidalcycles.nix",
-        "rev": "6de93596fff8126689d9246084ff77d540db1cc9",
+        "rev": "465764a9e4119ad7f0b6c4c529f0d0cf6101e94b",
         "type": "github"
       },
       "original": {
         "owner": "zmrocze",
-        "ref": "karol/superdirt-install",
+        "ref": "develop",
         "repo": "tidalcycles.nix",
         "type": "github"
       }
